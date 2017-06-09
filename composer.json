@@ -14,7 +14,7 @@
   },
   "autoload":{
     "psr-4": {
-      "razik440\\SMSGateway\\": "."
+      "razik440\\phoneSMSGateway\\": "."
     }
   }
 }
