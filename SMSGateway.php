@@ -34,6 +34,28 @@ class SMSGateway {
         return $this->makeRequest('/api/v3/devices','GET',['page' => $page]);
     }
 
+    function getDevicesID ()
+    {
+        $response = $this->getDevices();
+        if(true !== $response['response']['success']){
+            return false;
+        }
+        foreach ($response['response']['result']['data'] as $data){
+            $result[] = $data['id'];
+        }
+        return $result;
+    }
+
+    function getRandomDevice ()
+    {
+        $devicesID = $this->getDevicesID();
+        if(empty($devicesID)){
+            return false;
+        }
+        shuffle($devicesID);
+        return $devicesID[0];
+    }
+
     function getDevice ($id)
     {
         return $this->makeRequest('/api/v3/devices/view/'.$id,'GET');
