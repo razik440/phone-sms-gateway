@@ -6,9 +6,15 @@ class SMSGateway {
 
     static $baseUrl = "https://smsgateway.me";
 
-    function __construct($email,$password) {
-        $this->email = $email;
-        $this->password = $password;
+    function __construct($email = '', $password = '') {
+        if('' === $email || '' === $password){
+            $conf = config('smsgateway.auth');
+            $this->email = $conf['email'];
+            $this->password = $conf['password'];
+        }else{
+            $this->email = $email;
+            $this->password = $password;
+        }
     }
 
     function createContact ($name,$number) {
@@ -22,7 +28,6 @@ class SMSGateway {
     function getContact ($id) {
         return $this->makeRequest('/api/v3/contacts/view/'.$id,'GET');
     }
-
 
     function getDevices ($page=1)
     {
