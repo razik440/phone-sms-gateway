@@ -1,6 +1,6 @@
 {
     "name": "razik440/phone-sms-gateway",
-    "description": "A Firebird database package for the Laravel Framework",
+    "description": "Package for service smsgateway.me for the Laravel Framework",
     "license": "GNU",
     "version": "1.0.0.0",
     "authors": [
