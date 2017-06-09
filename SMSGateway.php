@@ -1,6 +1,6 @@
 <?php
 
-namespace SMSGateway;
+namespace razik440\phoneSMSGateway;
 
 class SMSGateway {
 
