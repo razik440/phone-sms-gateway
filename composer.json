@@ -1,0 +1,20 @@
+{
+    "name": "razik440/phone-sms-gateway",
+    "description": "A Firebird database package for the Laravel Framework",
+    "license": "GNU",
+    "version": "1.0.0.0",
+    "authors": [
+        {
+            "name": "Maksym Nikiforov",
+            "email": "maxnikiforov@inbox.ru"
+        }
+    ],
+    "require": {
+      "php": ">=5.4.0",
+    },
+    "autoload":{
+      "psr-0": {
+        "SMSGateway\\": "src/"
+      }
+    }
+}
